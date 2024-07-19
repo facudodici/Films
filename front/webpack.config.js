@@ -4,7 +4,7 @@ module.exports = {
   entry: './scripts/index.js',
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'public'), // Este es el directorio donde se generarán los archivos.
+    path: path.resolve(__dirname, 'public'), // Debe ser 'public' dentro del directorio 'front'
     publicPath: '/'
   },
   module: {
@@ -30,3 +30,4 @@ module.exports = {
     historyApiFallback: true
   }
 };
+
