@@ -4,7 +4,7 @@ module.exports = {
   entry: './scripts/index.js',
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'public'),
+    path: path.resolve(__dirname, 'public'), // Este es el directorio donde se generarán los archivos.
     publicPath: '/'
   },
   module: {
@@ -22,8 +22,11 @@ module.exports = {
     ]
   },
   devServer: {
-    contentBase: path.join(__dirname, 'public'),
+    static: {
+      directory: path.join(__dirname, 'public')
+    },
     compress: true,
-    port: 9000
+    port: 9000,
+    historyApiFallback: true
   }
 };
