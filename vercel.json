@@ -8,7 +8,7 @@
     {
       "src": "front/package.json",
       "use": "@vercel/static-build",
-      "config": { "distDir": "front/public" }
+      "config": { "distDir": "public" }
     }
   ],
   "routes": [
