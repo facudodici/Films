@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "node index.js",
+    "heroku-postbuild": "cd ../front && npm install && npm run build",
+    "heroku-start": "node index.js"
   },
   "keywords": [],
   "author": "",

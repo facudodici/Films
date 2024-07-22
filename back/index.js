@@ -1,8 +1,11 @@
 const app = require("./src/server.js");
 const dbCon = require("./src/config/dbCon.js");
 
+const PORT = process.env.PORT || 3001;
+
 dbCon()
-.then(() => {
-    app.listen(3001, () => console.log("DataBase connected and server runing in port 3001"));
-})
-.catch(() => console.log("Connection with DataBase refused"));
+  .then(() => {
+    app.listen(PORT, () => console.log(`DataBase connected and server running on port ${PORT}`));
+  })
+  .catch(() => console.log("Connection with DataBase refused"));
+
