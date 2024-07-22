@@ -1,0 +1,12 @@
+{
+    "name": "root",
+    "version": "1.0.0",
+    "description": "Root package.json to manage backend and frontend",
+    "scripts": {
+      "start": "cd back && npm run start",
+      "heroku-postbuild": "cd front && npm install && npm run build"
+    },
+    "dependencies": {},
+    "devDependencies": {}
+  }
+  

@@ -1,1 +1,1 @@
-web: node back/index.js
+web: npm start
