@@ -1,20 +1,27 @@
 const path = require('path');
-const CopyPlugin = require('copy-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-  entry: './scripts/index.js',
+  mode: 'production',
+  entry: './src/index.js', // Ajusta esto según la ubicación de tu archivo de entrada
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'public'),
+    path: path.resolve(__dirname, 'public'), // Salida en la carpeta public
   },
   plugins: [
-    new CopyPlugin({
+    new CopyWebpackPlugin({
       patterns: [
-        { from: 'index.html', to: '' },
-        { from: 'pages/*.html', to: '' },
-        { from: 'styles/*.css', to: '' },
+        { from: 'public', to: 'public' }, // Copia los archivos de public a public
       ],
     }),
   ],
-  mode: 'production',
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
+    ],
+  },
 };
+
