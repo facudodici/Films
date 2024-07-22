@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Madimi+One&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+header {
+    /*background-color: rgba(0, 0, 0, 0.6);*/
+    height: auto;
+    padding: 1%;
+}
+
+.logo {
+    margin-right: 1%;
+    max-width: 10%;
+    height: auto;
+}
+
+body {
+    background-image: url("../assets/fondo.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: "PT Sans", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    color: white;
+}
+
+
+.btn {
+    --border-color: linear-gradient(-45deg, #ffae00, #7e03aa, #00fffb);
+    --border-width: 0.125em;
+    --curve-size: 0.5em;
+    --blur: 30px;
+    --bg: #080312;
+    --color: #afffff;
+    color: var(--color);
+    cursor: pointer;
+    /* use position: relative; so that BG is only for .btn */
+    position: relative;
+    isolation: isolate;
+    display: inline-grid;
+    place-content: center;
+    padding: 0.5em 1.5em;
+    font-size: 17px;
+    border: 0;
+    text-transform: uppercase;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.6);
+    clip-path: polygon(
+      /* Top-left */ 0% var(--curve-size),
+      var(--curve-size) 0,
+      /* top-right */ 100% 0,
+      100% calc(100% - var(--curve-size)),
+      /* bottom-right 1 */ calc(100% - var(--curve-size)) 100%,
+      /* bottom-right 2 */ 0 100%
+    );
+    transition: color 250ms;
+  }
+  
+  .btn::after,
+  .btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+  }
+  
+  .btn::before {
+    background: var(--border-color);
+    background-size: 300% 300%;
+    animation: move-bg7234 5s ease infinite;
+    z-index: -2;
+  }
+  
+  @keyframes move-bg7234 {
+    0% {
+      background-position: 31% 0%;
+    }
+  
+    50% {
+      background-position: 70% 100%;
+    }
+  
+    100% {
+      background-position: 31% 0%;
+    }
+  }
+  
+  .btn::after {
+    background: var(--bg);
+    z-index: -1;
+    clip-path: polygon(
+      /* Top-left */ var(--border-width)
+        calc(var(--curve-size) + var(--border-width) * 0.5),
+      calc(var(--curve-size) + var(--border-width) * 0.5) var(--border-width),
+      /* top-right */ calc(100% - var(--border-width)) var(--border-width),
+      calc(100% - var(--border-width))
+        calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+      /* bottom-right 1 */
+        calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5))
+        calc(100% - var(--border-width)),
+      /* bottom-right 2 */ var(--border-width) calc(100% - var(--border-width))
+    );
+    transition: clip-path 500ms;
+  }
+  
+  .btn:where(:hover, :focus)::after {
+    clip-path: polygon(
+      /* Top-left */ calc(100% - var(--border-width))
+        calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+      calc(100% - var(--border-width)) var(--border-width),
+      /* top-right */ calc(100% - var(--border-width)) var(--border-width),
+      calc(100% - var(--border-width))
+        calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+      /* bottom-right 1 */
+        calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5))
+        calc(100% - var(--border-width)),
+      /* bottom-right 2 */
+        calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5))
+        calc(100% - var(--border-width))
+    );
+    transition: 200ms;
+  }
+  
+  .btn:where(:hover, :focus) {
+    color: #fff;
+  }
+
+#logoImg {
+    width: 100%;
+    height: auto;
+}
+
+.card-style {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    overflow: hidden; /* Esto asegura que los bordes redondeados funcionen */
+    color: black;
+}
+
+.card-style:hover {
+    transform: scale(1.05);
+}
+
+.imgCard {
+    width: 100%;
+    height: auto; /* Ajusta la altura según sea necesario */
+    object-fit: cover; /* Ajusta la imagen para que cubra el contenedor manteniendo su relación de aspecto */
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.card-text {
+    font-size: 0.9rem;
+    margin: 5px 0;
+}
+
+
+.text-decoration-none {
+    text-decoration: none !important;
+}
+
+.netflix, .amazon {
+    width: 50%;
+    height: auto;
+}
+
+.footer {
+    padding: 20px 0;
+}
+
+
+
+/*
+h2 {
+    font-size: 300%;
+}
+
+p {
+    font-size: 150%;
+}
+
+li {
+    background-color: rgba(0, 0, 0, 0.3);
+    display: inline-block;
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 150%;
+}
+
+a{
+    color: white;
+}
+
+.nav {
+    padding: 20px;
+}
+
+.logo{
+    display: inline-flex;
+}
+
+#titleLogo {
+    font-size: 850%;
+    color: #e0ab00;
+    text-align: center;
+}
+
+#logoImg {
+    width: 200px;
+    height: 200px;
+}
+
+
+
+#contenedorDePeliculas {
+    background-color: rgba(0, 0, 0, 0.3);
+    text-align: center;
+    color: white;
+    border-radius: 20px;
+}
+
+.card {
+    display: inline-block;
+    width: 25%;
+    margin: 2%;
+}
+
+.imgCard {
+    width: 300px;
+    height: 400px;
+}
+
+.footer {
+    color: white;
+}
+
+.about {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 20px;
+}
+
+.history {
+    color: white;
+    text-align: left;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 20px; 
+}
+
+.project {
+    color: white;
+    text-align: left;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 20px; 
+}
+
+
+
+
+
+
+*/
+
+/* Estilos para pantallas pequeñas y medianas */
+/*
+@media screen and (max-width: 900px) {
+    body {
+        padding: 5vw;
+    }
+
+    .logo {
+        display: block;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 100%;
+        margin: 1%;
+    }
+}
+*/
