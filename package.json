@@ -1,12 +1,33 @@
 {
-    "name": "root",
-    "version": "1.0.0",
-    "description": "Root package.json to manage backend and frontend",
-    "scripts": {
-      "start": "cd back && npm run start",
-      "heroku-postbuild": "cd front && npm install && npm run build"
-    },
-    "dependencies": {},
-    "devDependencies": {}
+  "name": "back",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node back/index.js",
+    "heroku-postbuild": "cd front && npm install && npx webpack --mode production",
+    "heroku-start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "morgan": "^1.10.0",
+    "nodemon": "^3.1.0",
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "axios": "^1.6.8",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.3.4"
+  },
+  "engines": {
+    "node": "20.x",
+    "npm": ">=10.0.0"
   }
+}
+
   
